@@ -1,0 +1,3 @@
+﻿namespace BookWeb.Infrastructure.Extensions
+{
+}
