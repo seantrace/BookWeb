@@ -5,7 +5,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+
 
 [contributors-shield]: https://img.shields.io/github/contributors/seantrace/BookWeb.svg?style=flat-square
 [contributors-url]: https://github.com/seantrace/BookWeb/graphs/contributors
