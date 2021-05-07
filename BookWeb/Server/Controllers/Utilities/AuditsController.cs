@@ -8,6 +8,7 @@ namespace BookWeb.Server.Controllers.Utilities
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class AuditsController : ControllerBase
     {
         private readonly ICurrentUserService _currentUserService;

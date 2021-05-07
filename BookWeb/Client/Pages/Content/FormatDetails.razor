@@ -1,0 +1,8 @@
+﻿@page  "/formatdetails/{Id}"
+
+<CalibreRecordDetails Id=@Id CalibreRecordType=@CalibreRecordType.Format></CalibreRecordDetails>
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+}

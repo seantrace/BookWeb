@@ -1,0 +1,28 @@
+﻿@using BookWeb.Client.Services
+@using BookWeb.Shared.Models
+@using BookWeb.Client.Shared.Components
+
+@if (books != null)
+{
+    <p>@books.Count.ToString()</p>
+    @foreach (Book book in books)
+    {
+        //string thumburl = $"https://localhost:5001/api/Books/{book.Id}/Thumbnail";
+        <Sprite NoSprite=false PageSize=50 SpriteNumber=@book.Id Style="width: 150px; height: 230px"></Sprite>
+    }
+}
+
+@code {
+    [Inject]
+    public ICalibreService CalibreService { get; set; }
+
+    [Parameter]
+    public Author AuthorItem { get; set; }
+    private List<Book> books;
+
+    protected override async Task OnInitializedAsync()
+    {
+        books = await CalibreService.GetBooksByAuthor(AuthorItem.Id);
+    }
+
+}

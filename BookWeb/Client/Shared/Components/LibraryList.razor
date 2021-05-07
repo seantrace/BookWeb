@@ -1,0 +1,52 @@
+﻿@inject NavigationManager NavigationManager
+
+<MudGrid>
+    <MudItem xs="12">
+        <MudGrid Spacing="2" Justify="Justify.Center">
+            <MudItem>
+                <MudPaper>
+                    <img @onclick="@(e => OpenLibrary(1))" src="media/Library_Fiction.jpg" Style="height:200px;width:200px;" />
+                </MudPaper>
+            </MudItem>
+            <MudItem>
+                <MudPaper>
+                    <img @onclick="@(e => OpenLibrary(2))" src="media/Library_Reference.jpg" Style="height:200px;width:200px;" />
+                </MudPaper>
+            </MudItem>
+            <MudItem>
+                <MudPaper>
+                    <img @onclick="@(e => OpenLibrary(3))" src="media/Library_Biography.jpg" Style="height:200px;width:200px;" />
+                </MudPaper>
+            </MudItem>
+            <MudItem>
+                <MudPaper>
+                    <img @onclick="@(e => OpenLibrary(4))" src="media/Library_Informational.jpg" Style="height:200px;width:200px;" />
+                </MudPaper>
+            </MudItem>
+            <MudItem>
+                <MudPaper>
+                    <img @onclick="@(e => OpenLibrary(5))" src="media/Library_Christian.jpg" Style="height:200px;width:200px;" />
+                </MudPaper>
+            </MudItem>
+            <MudItem>
+                <MudPaper>
+                    <img @onclick="@(e => OpenLibrary(7))" src="media/Library_Christian.jpg" Style="height:200px;width:200px;" />
+                </MudPaper>
+            </MudItem>
+            <MudItem>
+                <MudPaper>
+                    <img @onclick="@(e => OpenLibrary(8))" src="media/Library_Christian.jpg" Style="height:200px;width:200px;" />
+                </MudPaper>
+            </MudItem>
+        </MudGrid>
+        <div style="margin:50px"></div>
+    </MudItem>
+</MudGrid>
+
+@code {
+
+    public void OpenLibrary(int id)
+    {
+        NavigationManager.NavigateTo($"/library/{id}");
+    }
+}

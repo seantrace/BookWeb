@@ -1,0 +1,21 @@
+﻿@page "/libraries"
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Home> _localizer
+@using BookWeb.Client.Services
+
+<MudIcon Icon="@Icons.Material.Outlined.LibraryBooks" Size="Size.Large" />
+<h2 style="display: inline-block;">Libraries</h2>
+<MudDivider />
+
+<LibraryList />
+
+@code {
+
+[Inject]
+public ICalibreService CalibreService { get; set; }
+
+
+protected override async Task OnInitializedAsync()
+{
+    var libraries = await CalibreService.GetLibraries();
+}
+}

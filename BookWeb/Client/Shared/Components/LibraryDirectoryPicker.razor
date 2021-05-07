@@ -1,0 +1,14 @@
+﻿
+@using System.IO
+@using  BookWeb.Client.Services
+
+<MudTreeView Height=@Height Width=@Width ExpandOnClick="false" CanActivate="true" Items="TreeItems" CanSelect="false" @bind-ActivatedValue="ActivatedValue">
+    <ItemTemplate>
+        <MudTreeViewItem ExpandedChanged="@((e) => TreeExpanded(e,context))"  Items="@context.TreeItems" Value="@context"
+                         IconColor="@context.Color" Icon="@context.Icon" Text="@context.Name" EndTextTypo="@Typo.caption" />
+    </ItemTemplate>
+</MudTreeView>
+
+<div style="width: 100%">
+    <MudText Typo="@Typo.subtitle1">Library Path: @(ActivatedValue?.Path)</MudText>
+</div>

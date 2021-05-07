@@ -1,0 +1,19 @@
+﻿@using BookWeb.Shared.BookWebModels
+@if (imageData != null) {
+
+    <MudGrid>
+        <MudItem xs="8">
+            <MudGrid Spacing="2" Justify="Justify.FlexStart">
+                @foreach (ImageData data in imageData)
+                {
+                    <img style="width:200px;height:200px;border-radius:50%" src="@data.Data" />
+                }
+            </MudGrid>
+        </MudItem>
+    </MudGrid>
+
+}
+
+@code {
+
+}

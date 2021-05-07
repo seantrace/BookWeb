@@ -7,9 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{0317DF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{275B08FA-6837-4A32-B890-0ADE2DE4C3F7}"
 	ProjectSection(SolutionItems) = preProject
+		Context_Scaffolding.txt = Context_Scaffolding.txt
+		DataModel.txt = DataModel.txt
 		Features.md = Features.md
 		LICENSE = LICENSE
 		README.md = README.md
+		Scraping.txt = Scraping.txt
+		TODO.txt = TODO.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{885BB018-5B07-4038-B061-71B70188933B}"
@@ -44,6 +48,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookWeb.Client.Infrastructure", "BookWeb.Client.Infrastructure\BookWeb.Client.Infrastructure.csproj", "{6B3A1D03-E35E-4579-A24A-E3343D024B4B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookWeb.Infrastructure.Shared", "BookWeb.Infrastructure.Shared\BookWeb.Infrastructure.Shared.csproj", "{BFAD2E2A-8C7C-4357-9C81-D2ECDEEFC0F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MudBlazor", "..\MudBlazor\src\MudBlazor\MudBlazor.csproj", "{16011F1A-729B-4750-B3C3-1B7174DB82B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +89,10 @@ Global
 		{BFAD2E2A-8C7C-4357-9C81-D2ECDEEFC0F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFAD2E2A-8C7C-4357-9C81-D2ECDEEFC0F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFAD2E2A-8C7C-4357-9C81-D2ECDEEFC0F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16011F1A-729B-4750-B3C3-1B7174DB82B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16011F1A-729B-4750-B3C3-1B7174DB82B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16011F1A-729B-4750-B3C3-1B7174DB82B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16011F1A-729B-4750-B3C3-1B7174DB82B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,27 @@
+﻿@page "/recentbooks"
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Home> _localizer
+<MudIcon Icon="@Icons.Material.Outlined.MoreTime" Size="Size.Large" />
+<h2 style="display: inline-block;" >Recently Added Books</h2>
+<MudDivider />
+@if (books != null)
+{
+    <MudScrollToTop>
+        <MudFab Color="Color.Tertiary" Icon="@Icons.Filled.ArrowCircleUp" />
+    </MudScrollToTop>
+
+    <MudGrid>
+        <MudItem xs="12">
+            <MudGrid Spacing="2" Justify="Justify.Center">
+                @foreach (var book in books)
+                {
+                    <BookCover BookItem=@book></BookCover>
+                }
+                <div id="observerTarget"></div>
+            </MudGrid>
+        </MudItem>
+    </MudGrid>
+}
+
+@code {
+
+}

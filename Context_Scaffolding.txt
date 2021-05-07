@@ -1,0 +1,18 @@
+dotnet ef dbcontext scaffold "Filename=C:\Users\sean.trace\Documents\metadata.db" Microsoft.EntityFrameworkCore.Sqlite --table books --table authors --table books_authors_link --table books_languages_link --table books_publishers_link --table books_series_link --table books_tags_link --table comments --table data --table identifiers --table languages --table publishers --table series --table tags --output-dir CalibreModels --namespace BookWeb --data-annotations --force --context CalibreDBContext
+
+Scaffolding Controllers
+
+dotnet aspnet-codegenerator controller --model Book --dataContext CalibreDBContext --controllerName BooksController --useAsyncActions --restWithNoViews --useSqlite --controllerNamespace BookWeb
+
+dotnet aspnet-codegenerator controller --model Author --dataContext CalibreDBContext --controllerName AuthorsController --useAsyncActions --restWithNoViews --useSqlite --controllerNamespace BookWeb
+
+dotnet aspnet-codegenerator controller --model Language --dataContext CalibreDBContext --controllerName LanguagesController --useAsyncActions --restWithNoViews --useSqlite --controllerNamespace BookWeb
+
+dotnet aspnet-codegenerator controller --model Publisher --dataContext CalibreDBContext --controllerName PublishersController --useAsyncActions --restWithNoViews --useSqlite --controllerNamespace BookWeb
+
+dotnet aspnet-codegenerator controller --model Series --dataContext CalibreDBContext --controllerName SeriesController --useAsyncActions --restWithNoViews --useSqlite --controllerNamespace BookWeb
+
+dotnet aspnet-codegenerator controller --model Tag --dataContext CalibreDBContext --controllerName TagsController --useAsyncActions --restWithNoViews --useSqlite --controllerNamespace BookWeb
+
+dotnet aspnet-codegenerator controller --model Datum --dataContext CalibreDBContext --controllerName DataController --useAsyncActions --restWithNoViews --useSqlite --controllerNamespace BookWeb
+

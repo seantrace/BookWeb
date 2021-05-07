@@ -1,0 +1,112 @@
+﻿@page "/test"
+@using BookWeb.Shared.BookWebModels
+<LibraryDirectoryPicker Height="400px" Width="400px"></LibraryDirectoryPicker>
+
+
+<div class="bookcover-container">
+    <div class="bookcover">
+        <div class="bookcover-overlay">
+            <div style="position: absolute;top: 0;width: 100%;text-align:center;">
+                <MudRating ReadOnly="true" SelectedValue="2" />
+            </div>
+            <div style="position: absolute;bottom: 0;width: 100%;text-align:center;">
+                <MudTooltip Placement="Placement.Top" Text="Marked read on 12/1/2021">
+                    <MudIcon Icon="@Icons.Material.Outlined.Visibility" Color="Color.Error" />
+                </MudTooltip>
+                <MudTooltip Placement="Placement.Top" Text="Downloaded on 12/5/2020">
+                    <MudIcon Icon="@Icons.Material.Outlined.CloudDownload" Color="Color.Error" />
+                </MudTooltip>
+            </div>
+        </div>
+        <img class="bookcover-image" src="media/CoverSprites/b40.png">
+        <div class="bookcover-details  fadeIn-right">
+            <a href="bookdetails/40">
+                <h5 class="bookcover-title">Playing with Fire</h5>
+                <p class="bookcover-text">Skulduggery Pleasant</p>
+                <em><p class="bookcover-text">Derek Landy</p></em>
+            </a>
+        </div>
+    </div>
+</div>
+
+@if (authorData !=null) {
+<div style="display:inline-block;height:100%;overflow:hidden;">
+    <div style="height:500px;overflow: hidden;max-height: 500px;overflow-y: scroll;">
+        <MudForm Class="authorimages" Style="display:grid;">
+            <MudRadioGroup @bind-SelectedOption="@SelectedOption">
+                @{int count=0;}
+                @foreach (ImageData data in authorData.Images)
+            {
+                <MudRadio Option=@(count.ToString()) Color="Color.Primary"><img class="authorimage" src=@data.Data /></MudRadio>
+                count++;
+            }
+            </MudRadioGroup>
+        </MudForm>
+    </div>
+</div>
+<div class="d-flex align-center">
+    <MudButton Variant="Variant.Outlined" OnClick="Reset">Reset</MudButton>
+    <MudText Class="ml-4">Selected Option: @SelectedOption</MudText>
+</div>
+} else {
+<MudProgressCircular Color="Color.Default" Indeterminate="true" />
+<p>Loading images...</p>
+}
+
+
+<BlazoredTextEditor @ref="@QuillHtml">
+    <ToolbarContent>
+        <select class="ql-header">
+            <option selected=""></option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+        </select>
+        <span class="ql-formats">
+            <button class="ql-bold"></button>
+            <button class="ql-italic"></button>
+            <button class="ql-underline"></button>
+            <button class="ql-strike"></button>
+        </span>
+        <span class="ql-formats">
+            <select class="ql-color"></select>
+            <select class="ql-background"></select>
+        </span>
+        <span class="ql-formats">
+            <button class="ql-list" value="ordered"></button>
+            <button class="ql-list" value="bullet"></button>
+        </span>
+        <span class="ql-formats">
+            <button class="ql-link"></button>
+        </span>
+    </ToolbarContent>
+    <EditorContent>
+        <h4>This Toolbar works with HTML</h4>
+        <a href="http://BlazorHelpWebsite.com">
+            BlazorHelpWebsite.com
+        </a>
+    </EditorContent>
+</BlazoredTextEditor>
+<br />
+<button class="btn btn-primary"
+        @onclick="GetHTML">
+    Get HTML
+</button>
+<button class="btn btn-primary"
+        @onclick="SetHTML">
+    Set HTML
+</button>
+<br />
+<div>
+    <br />
+    @((MarkupString)QuillHTMLContent)
+    @QuillHTMLContent
+</div>
+<br />
+
+@code {
+
+
+}

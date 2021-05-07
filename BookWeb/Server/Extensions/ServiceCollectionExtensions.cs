@@ -1,12 +1,10 @@
 ﻿using BookWeb.Application.Configurations;
-using BookWeb.Application.Interfaces.Repositories;
 using BookWeb.Application.Interfaces.Services;
 using BookWeb.Application.Interfaces.Services.Account;
 using BookWeb.Application.Interfaces.Services.Identity;
 using BookWeb.Application.Models.Identity;
 using BookWeb.Infrastructure;
 using BookWeb.Infrastructure.Contexts;
-using BookWeb.Infrastructure.Repositories;
 using BookWeb.Infrastructure.Services;
 using BookWeb.Infrastructure.Services.Identity;
 using BookWeb.Infrastructure.Shared.Services;
@@ -54,7 +52,17 @@ namespace BookWeb.Server.Extensions
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "BookWeb",
+                    Title = "BookWeb Accounts",
+                    License = new OpenApiLicense()
+                    {
+                        Name = "MIT License",
+                        Url = new Uri("https://opensource.org/licenses/MIT")
+                    }
+                });
+                c.SwaggerDoc("v2", new OpenApiInfo
+                {
+                    Version = "v2",
+                    Title = "BookWeb Calibre",
                     License = new OpenApiLicense()
                     {
                         Name = "MIT License",
@@ -96,6 +104,7 @@ namespace BookWeb.Server.Extensions
                 .AddDbContext<BlazorHeroContext>(options => options
                     .UseSqlServer(configuration.GetConnectionString("DefaultConnection")))
             .AddTransient<IDatabaseSeeder, DatabaseSeeder>();
+            //.AddDbContext<CalibreDBContext>();
 
         public static IServiceCollection AddIdentity(this IServiceCollection services)
         {
@@ -136,10 +145,6 @@ namespace BookWeb.Server.Extensions
             services.AddTransient<IAuditService, AuditService>();
             services.AddScoped<IExcelService, ExcelService>();
 
-            services.AddTransient(typeof(IRepositoryAsync<>), typeof(RepositoryAsync<>));
-            services.AddTransient<IProductRepository, ProductRepository>();
-            services.AddTransient<IBrandRepository, BrandRepository>();
-            services.AddTransient<IUnitOfWork, UnitOfWork>();
             return services;
         }
 

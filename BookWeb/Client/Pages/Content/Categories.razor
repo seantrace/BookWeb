@@ -1,0 +1,9 @@
+﻿@page "/categories/{selectedRecordLetter?}"
+
+<CalibreRecordViewer Icon=@Icons.Material.Outlined.LocalOffer Title="Categories" BaseUrl="categories"  DetailsUrl="categorydetails" CalibreRecordType=CalibreRecordType.Category selectedRecordLetter=@selectedRecordLetter></CalibreRecordViewer>
+
+@code {
+
+    [Parameter]
+    public string selectedRecordLetter { get; set; }
+}

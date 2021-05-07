@@ -16,5 +16,9 @@
     <ProjectReference Include="..\BookWeb.Domain\BookWeb.Domain.csproj" />
     <ProjectReference Include="..\BookWeb.Shared\BookWeb.Shared.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\" />
+    <Folder Include="Mappings\" />
+  </ItemGroup>
 
 </Project>

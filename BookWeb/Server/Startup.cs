@@ -2,11 +2,14 @@ using BookWeb.Application.Extensions;
 using BookWeb.Infrastructure.Extensions;
 using BookWeb.Server.Extensions;
 using BookWeb.Server.Middlewares;
+using BookWeb.Server.Services;
 using Hangfire;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
@@ -47,6 +50,12 @@ namespace BookWeb.Server
                 config.AssumeDefaultVersionWhenUnspecified = true;
                 config.ReportApiVersions = true;
             });
+            services.AddLazyCache();
+
+            services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddDbContext<CalibreDBContext>();
+            services.AddSingleton<IWebScraper, WebScraper>();
+            services.AddSingleton<ILibraryService, LibraryService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -56,7 +65,11 @@ namespace BookWeb.Server
             app.UseHangfireDashboard("/jobs");
             app.UseMiddleware<ErrorHandlerMiddleware>();
             app.UseBlazorFrameworkFiles();
-            app.UseStaticFiles();
+            var provider = new FileExtensionContentTypeProvider();
+            provider.Mappings[".epub"] = "application/epub+zip";
+            app.UseStaticFiles(new StaticFileOptions {
+                ContentTypeProvider = provider
+            });
             app.UseStaticFiles(new StaticFileOptions()
             {
                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Files")),

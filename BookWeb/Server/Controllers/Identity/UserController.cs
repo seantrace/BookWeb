@@ -10,6 +10,7 @@ namespace BookWeb.Server.Controllers.Identity
     [Authorize]
     [Route("api/identity/user")]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;

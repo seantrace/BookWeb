@@ -3,7 +3,6 @@ using BookWeb.Application.Models.Chat;
 using BookWeb.Application.Models.Identity;
 using BookWeb.Domain.Contracts;
 using BookWeb.Domain.Entities;
-using BookWeb.Domain.Entities.Catalog;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -25,8 +24,8 @@ namespace BookWeb.Infrastructure.Contexts
         }
 
         public DbSet<ChatHistory> ChatHistories { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Brand> Brands { get; set; }
+        //public DbSet<Product> Products { get; set; }
+        //public DbSet<Brand> Brands { get; set; }
         public DbSet<Document> Documents { get; set; }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

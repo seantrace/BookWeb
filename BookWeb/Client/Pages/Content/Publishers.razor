@@ -1,0 +1,9 @@
+﻿@page "/publishers/{selectedRecordLetter?}"
+
+<CalibreRecordViewer Icon=@Icons.Material.Outlined.TextFields Title="Publishers" BaseUrl="publishers"  DetailsUrl="publisherdetails" CalibreRecordType=CalibreRecordType.Publisher selectedRecordLetter=@selectedRecordLetter></CalibreRecordViewer>
+
+@code {
+
+    [Parameter]
+    public string selectedRecordLetter { get; set; }
+}

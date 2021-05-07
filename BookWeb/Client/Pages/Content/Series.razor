@@ -1,0 +1,9 @@
+﻿@page "/series/{selectedRecordLetter?}"
+
+<CalibreRecordViewer Icon=@Icons.Material.Outlined.Bookmark Title="Series" BaseUrl="series"  DetailsUrl="seriesdetails" CalibreRecordType=CalibreRecordType.Series selectedRecordLetter=@selectedRecordLetter></CalibreRecordViewer>
+
+@code {
+
+    [Parameter]
+    public string selectedRecordLetter { get; set; }
+}

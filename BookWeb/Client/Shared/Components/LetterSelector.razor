@@ -1,0 +1,10 @@
+﻿
+<MudChipSet @ref=chipSet Filter="true" Mandatory=true>
+    @foreach (char c in CharacterList)
+    {
+        string url = $"/{UrlBase}/{c}";
+        bool defaultChip = (SelectedChipCharacter == c);
+        Console.WriteLine($"Chip {c} Default {defaultChip}");
+        <MudChip @ref=chips[c] Default=@defaultChip @onclick="@(() => Goto(c))" Text=@c.ToString()>@c</MudChip>
+    }
+</MudChipSet>

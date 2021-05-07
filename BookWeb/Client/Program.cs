@@ -1,7 +1,9 @@
 using BookWeb.Client.Extensions;
 using BookWeb.Client.Infrastructure.Managers.Preferences;
+using BookWeb.Client.Services;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Globalization;
 using System.Threading.Tasks;
 
@@ -28,6 +30,22 @@ namespace BookWeb.Client
                 CultureInfo.DefaultThreadCurrentCulture = culture;
                 CultureInfo.DefaultThreadCurrentUICulture = culture;
             }
+
+            builder.Services.AddScoped<ICalibreService, CalibreService>();
+            builder.Services.AddScoped<IFileSystemService, FileSystemService>();
+
+            //builder.Services.AddHttpClient<ICalibreService, CalibreService>("CalibreService");//, client =>
+            //{
+            //    client.BaseAddress = new Uri("https://localhost:5001/api/");
+            //});
+
+            //builder.Services.AddHttpClient<IFileSystemService, FileSystemService>("FileSystemService", client =>
+            //{
+            //    client.BaseAddress = new Uri("https://localhost:5001/api/FileSystem/");
+            //});
+
+            builder.Services.AddSingleton<ISimpleStateService, SimpleStateService>();
+
             await builder.Build().RunAsync();
         }
     }

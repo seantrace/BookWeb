@@ -1,0 +1,179 @@
+﻿@page "/bookdetails/{Id}"
+
+@using BookWeb.Client.Extensions
+
+
+@if (book != null)
+{
+    <style>
+    .book-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 600px;
+    }
+
+    @@keyframes initAnimation{
+      0% {
+        transform: rotateY(-45deg);
+      }
+      100% {
+        transform: rotateY(-20deg);
+      }
+    }
+
+    .book-container .book {
+      width: 195px;
+      height: 300px;
+      position: relative;
+      transform-style: preserve-3d;
+      transform: rotateY(-20deg);
+      transition: transform 1s ease;
+      animation: 1s ease 0s 1 initAnimation;
+    }
+
+    .book-container .book:hover {
+      transform: rotateY(-45deg);
+    }
+
+    .book-container .book > :first-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 195px;
+      height: 300px;
+      @{ string z = (Thickness / 2).ToString() + "px";}
+      transform: translateZ(@z);
+      background-color: #01060f;
+      border-radius: 0 2px 2px 0;
+      box-shadow: 5px 5px 20px #aaaaaa;
+      background-color: #01060f;
+    }
+
+    .book-container .book::before {
+      position: absolute;
+      content: ' ';
+      left: 0;
+      top: 3px;
+      @{ string w = (Thickness- 2).ToString() + "px";}
+      width: @w;
+      height: 297px;
+      @{ string x = (192 - (Thickness / 2)).ToString() + "px";}
+      transform: translateX(@x) rotateY(90deg);
+      background: linear-gradient(90deg,
+        #fff 0%,
+        #f9f9f9 5%,
+        #fff 10%,
+        #f9f9f9 15%,
+        #fff 20%,
+        #f9f9f9 25%,
+        #fff 30%,
+        #f9f9f9 35%,
+        #fff 40%,
+        #f9f9f9 45%,
+        #fff 50%,
+        #f9f9f9 55%,
+        #fff 60%,
+        #f9f9f9 65%,
+        #fff 70%,
+        #f9f9f9 75%,
+        #fff 80%,
+        #f9f9f9 85%,
+        #fff 90%,
+        #f9f9f9 95%,
+        #fff 100%
+        );
+    }
+
+    .book-container .book::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: ' ';
+      width: 195px;
+      height: 300px;
+      @{ string zt = (-Thickness / 2).ToString() + "px";}
+      transform: translateZ(@zt);
+      background-color: #01060f;
+      border-radius: 0 2px 2px 0;
+      box-shadow: -10px 0 50px 10px #aaaaaa;
+    }
+    </style>
+
+    <MudGrid>
+        <MudItem xs="2">
+            @{string thumburl = $"https://localhost:5001/api/Books/{book.Id}/Thumbnail";}
+            <div class="book-container">
+                <div class="book">
+                    <img src=@thumburl />
+                </div>
+            </div>
+        </MudItem>
+        <MudItem xs="10">
+            <h1>@book.Title</h1>
+            <h3>Author - @book.Author</h3>
+            @if (book.SeriesId > 0)
+            {
+                <h3>Book @book.SeriesIndex.ToString() of @book.Series</h3>
+            }
+            @{int rating = (int)book.Rating / 2;}
+            <MudRating ReadOnly="true" SelectedValue="@rating" />
+            <MudDivider />
+            @if (book.Identifiers.AsNotNull().Count() > 0)
+            {
+                <MudIcon Icon="@Icons.Material.Outlined.Link" />
+            }
+            @foreach (var identifier in book.Identifiers.AsNotNull())
+            {
+                (string url, string name) data = GetIdentifierData(identifier);
+                <MudChip Class="linkchip" Variant="Variant.Outlined" Target="_blank" Link=@data.url>@data.name</MudChip>
+            }
+            <br />
+            @if (book.Tags.AsNotNull().Count() > 0)
+            {
+                <MudIcon Icon="@Icons.Material.Outlined.LocalOffer" />
+            }
+            @foreach (var tag in book.Tags.AsNotNull())
+            {
+                <MudChip Class="linkchip" Variant="Variant.Outlined" Target="_blank">@tag.Name</MudChip>
+            }
+            <MudGrid>
+                <MudItem xs="3">
+                    <MudSimpleTable Style="overflow-x: auto;">
+                        <tbody>
+                            <tr>
+                                <td>Publisher</td>
+                                <td>@book.Publisher</td>
+                            </tr>
+                            <tr>
+                                <td>Published</td>
+                                <td>@book.Pubdate.ToString("dd MMMM, yyyy")</td>
+                            </tr>
+                            <tr>
+                                <td>Language</td>
+                                <td>@book.Language</td>
+                            </tr>
+                        </tbody>
+                    </MudSimpleTable>
+                </MudItem>
+            </MudGrid>
+
+            @*<MudList>
+            @{string publisher = $"Publisher : {book.Publisher}";}
+            <MudListItem Text=@publisher />
+            @{string published = $"Published : {book.Pubdate.ToString("dd MMMM, yyyy")}";}
+            <MudListItem Text=@published />
+            @{string language = $"Language : {book.Language}";}
+            <MudListItem Text=@language />
+        </MudList>*@
+            <MudDivider />
+            <h3>Description:</h3>
+            <MudText Typo="Typo.body1"> @((MarkupString)book.Comment)</MudText>
+        </MudItem>
+    </MudGrid>
+}
+
+@code {
+
+
+}

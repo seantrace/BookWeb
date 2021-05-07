@@ -1,0 +1,116 @@
+{
+  "library": [
+    {
+      "id": 0,
+      "name": "Fiction",
+      "path": "F:\\EBooks\\Libraries\\Fiction",
+      "userAccess": [
+        1
+      ],
+      "bookCount": 0
+    },
+    {
+      "id": 1,
+      "name": "Fiction",
+      "path": "F:\\EBooks\\Libraries\\Fiction",
+      "userAccess": [
+        1
+      ],
+      "bookCount": 0
+    }
+  ],
+  "shelf": [
+    {
+      "id": 0,
+      "libraryId": 0,
+      "type": 1,
+      "name": "Read",
+      "isPublic": false,
+      "ownerUserId": 1,
+      "created": "2021-04-29T18:10:03.8300335+01:00",
+      "modified": "2021-04-29T18:10:03.8328862+01:00",
+      "bookIds": []
+    },
+    {
+      "id": 1,
+      "libraryId": 0,
+      "type": 1,
+      "name": "Download",
+      "isPublic": false,
+      "ownerUserId": 1,
+      "created": "2021-04-29T18:10:03.8602303+01:00",
+      "modified": "2021-04-29T18:10:03.8602352+01:00",
+      "bookIds": []
+    },
+    {
+      "id": 2,
+      "libraryId": 0,
+      "type": 1,
+      "name": "Archive",
+      "isPublic": false,
+      "ownerUserId": 1,
+      "created": "2021-04-29T18:10:03.8912938+01:00",
+      "modified": "2021-04-29T18:10:03.8912995+01:00",
+      "bookIds": []
+    },
+    {
+      "id": 3,
+      "libraryId": 1,
+      "type": 0,
+      "name": "Crime",
+      "isPublic": false,
+      "ownerUserId": 1,
+      "created": "2021-04-29T18:10:03.9032688+01:00",
+      "modified": "2021-04-29T18:10:03.9032747+01:00",
+      "bookIds": []
+    },
+    {
+      "id": 4,
+      "libraryId": 0,
+      "type": 1,
+      "name": "Read",
+      "isPublic": false,
+      "ownerUserId": 1,
+      "created": "2021-04-29T18:14:35.3747086+01:00",
+      "modified": "2021-04-29T18:14:35.3751362+01:00",
+      "bookIds": []
+    },
+    {
+      "id": 5,
+      "libraryId": 0,
+      "type": 2,
+      "name": "Download",
+      "isPublic": false,
+      "ownerUserId": 1,
+      "created": "2021-04-29T18:14:35.4086697+01:00",
+      "modified": "2021-04-29T18:14:35.4086761+01:00",
+      "bookIds": []
+    },
+    {
+      "id": 6,
+      "libraryId": 0,
+      "type": 3,
+      "name": "Archive",
+      "isPublic": false,
+      "ownerUserId": 1,
+      "created": "2021-04-29T18:14:35.4210154+01:00",
+      "modified": "2021-04-29T18:14:35.4210222+01:00",
+      "bookIds": []
+    },
+    {
+      "id": 7,
+      "libraryId": 1,
+      "type": 0,
+      "name": "Crime",
+      "isPublic": false,
+      "ownerUserId": 1,
+      "created": "2021-04-29T18:14:35.4389928+01:00",
+      "modified": "2021-04-29T18:14:35.4389998+01:00",
+      "bookIds": [
+        345,
+        399,
+        399
+      ]
+    }
+  ]
+}

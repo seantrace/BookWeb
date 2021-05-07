@@ -1,0 +1,54 @@
+﻿
+@if (NoSprite)
+{
+    string thumburl = $"https://localhost:5001/api/Books/{SpriteNumber}/Thumbnail";
+    <MudCardMedia class="book-cover" Image=@thumburl style="width:150px;height:225px" />
+}
+else
+{
+    Console.WriteLine($"Load sprites for page {Page}");
+    <link rel="preload" as="image" href=@ImageUrl>
+    <link rel="preload" as="style" href=@CssUrl onload="this.rel='stylesheet'" />
+    <img class="@Class" style="@Style" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" />
+}
+
+@code {
+    [Parameter]
+    public long SpriteNumber { get; set; }
+    [Parameter]
+    public int PageSize { get; set; }
+    [Parameter]
+    public string Style { get; set; }
+    [Parameter]
+    public bool NoSprite { get; set; }
+    [Parameter]
+    public bool Small { get; set; }
+
+    private int Page
+    {
+        get => ((int)SpriteNumber / PageSize);
+    }
+
+    private string ImageUrl
+    {
+        get => "/media/CoverSprites/coversprite" + Page + ".png";
+    }
+
+    private string CssUrl
+    {
+        get => "/media/CoverSprites/coversprite" + Page + ".css";
+    }
+
+    private string Class
+    {
+        get
+        {
+            var val = "sprite" + Page + " b" + SpriteNumber.ToString();
+            if (Small)
+            {
+                val = val + " smallcover";
+            }
+            return val;
+        }
+    }
+}

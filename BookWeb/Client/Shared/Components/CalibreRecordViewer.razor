@@ -1,0 +1,67 @@
+﻿<div Class="d-flex">
+    <MudIcon Class="mx-1" Icon=@Icon Size="Size.Large" />
+    <h2>@Title @RecordCount</h2>
+</div>
+<MudDivider />
+@if (records != null)
+{
+    if (selectedRecordChar != '*')
+    {
+        <LetterSelector CharacterList=@recordByChar.Keys.ToList() SelectedChipCharacter=@selectedRecordChar UrlBase=@BaseUrl></LetterSelector>
+        bool disabled = (selectedRecordChar == ' ');
+        <MudToggleIconButton Disabled=@disabled @bind-Toggled="@SortDirection" Icon="fas fa-sort-alpha-down-alt" ToggledIcon="fas fa-sort-alpha-down" />
+    }
+    <MudDivider />
+   if (selectedRecordLetter != null)
+    {
+        @foreach (ICalibreRecord record in recordByChar[selectedRecordChar])
+        {
+            <MudGrid>
+                <MudItem xs="12">
+                    <MudGrid Spacing=2 Justify="Justify.FlexStart">
+                        <MudItem xs=2>
+                            @{ string url = $"/{DetailsUrl}/{record.Id}";}
+                            <MudLink Href=@url>@record.Sort</MudLink>
+                        </MudItem>
+                        @if (record.Books != null)
+                        {
+                            <MudItem xs=1>
+                                @{string s = record.Books.Count > 1 ? "Books" : "Book";}
+                                <p>@record.Books.Count.ToString() @s</p>
+                            </MudItem>
+                            <MudItem xs=9>
+                                <MudGrid>
+                                    <MudItem xs=12>
+                                        @foreach (Book book in record.Books)
+                                        {
+                                            <Sprite Small=true NoSprite=false PageSize=50 SpriteNumber=@book.Id Style="width: 150px; height: 230px" />
+                                        }
+                                    </MudItem>
+                                </MudGrid>
+                            </MudItem>
+                        }
+                        else
+                        {
+                            <MudItem xs=1>
+                                <p>?? Books</p>
+                            </MudItem>
+                            <MudItem xs=9>
+                                <MudGrid>
+                                    <MudItem xs=12>
+                                        @{ Random rnd = new Random();
+                                            int nobooks = rnd.Next(1, 5);}
+                                        @for (int i = 0; i < nobooks; i++)
+                                        {
+                                            <img src="/media/fb1.png" class="ma-2 placeholdercover" style="height:125px;" />
+                                        }
+                                    </MudItem>
+                                </MudGrid>
+                            </MudItem>
+                        }
+                    </MudGrid>
+                </MudItem>
+            </MudGrid>
+            <MudDivider />
+        }
+    }
+}

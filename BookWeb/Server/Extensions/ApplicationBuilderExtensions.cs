@@ -27,7 +27,8 @@ namespace BookWeb.Server.Extensions
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "BookWeb.Server");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "BookWeb Accounts");
+                options.SwaggerEndpoint("/swagger/v2/swagger.json", "BookWeb Calibre");
                 options.RoutePrefix = "swagger";
                 options.DisplayRequestDuration();
             });

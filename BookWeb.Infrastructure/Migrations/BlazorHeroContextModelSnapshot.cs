@@ -184,82 +184,82 @@ namespace BookWeb.Infrastructure.Migrations
                     b.ToTable("Users", "Identity");
                 });
 
-            modelBuilder.Entity("BookWeb.Domain.Entities.Catalog.Brand", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            //modelBuilder.Entity("BookWeb.Domain.Entities.Catalog.Brand", b =>
+            //    {
+            //        b.Property<int>("Id")
+            //            .ValueGeneratedOnAdd()
+            //            .HasColumnType("int")
+            //            .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+            //        b.Property<string>("CreatedBy")
+            //            .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
+            //        b.Property<DateTime>("CreatedOn")
+            //            .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+            //        b.Property<string>("Description")
+            //            .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("nvarchar(max)");
+            //        b.Property<string>("LastModifiedBy")
+            //            .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("LastModifiedOn")
-                        .HasColumnType("datetime2");
+            //        b.Property<DateTime?>("LastModifiedOn")
+            //            .HasColumnType("datetime2");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+            //        b.Property<string>("Name")
+            //            .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Tax")
-                        .HasColumnType("decimal(18,2)");
+            //        b.Property<decimal>("Tax")
+            //            .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("Id");
+            //        b.HasKey("Id");
 
-                    b.ToTable("Brands");
-                });
+            //        b.ToTable("Brands");
+            //    });
 
-            modelBuilder.Entity("BookWeb.Domain.Entities.Catalog.Product", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            //modelBuilder.Entity("BookWeb.Domain.Entities.Catalog.Product", b =>
+            //    {
+            //        b.Property<int>("Id")
+            //            .ValueGeneratedOnAdd()
+            //            .HasColumnType("int")
+            //            .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Barcode")
-                        .HasColumnType("nvarchar(max)");
+            //        b.Property<string>("Barcode")
+            //            .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("BrandId")
-                        .HasColumnType("int");
+            //        b.Property<int>("BrandId")
+            //            .HasColumnType("int");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+            //        b.Property<string>("CreatedBy")
+            //            .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
+            //        b.Property<DateTime>("CreatedOn")
+            //            .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+            //        b.Property<string>("Description")
+            //            .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageDataURL")
-                        .HasColumnType("text");
+            //        b.Property<string>("ImageDataURL")
+            //            .HasColumnType("text");
 
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("nvarchar(max)");
+            //        b.Property<string>("LastModifiedBy")
+            //            .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("LastModifiedOn")
-                        .HasColumnType("datetime2");
+            //        b.Property<DateTime?>("LastModifiedOn")
+            //            .HasColumnType("datetime2");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+            //        b.Property<string>("Name")
+            //            .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Rate")
-                        .HasColumnType("decimal(18,2)");
+            //        b.Property<decimal>("Rate")
+            //            .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("Id");
+            //        b.HasKey("Id");
 
-                    b.HasIndex("BrandId");
+            //        b.HasIndex("BrandId");
 
-                    b.ToTable("Products");
-                });
+            //        b.ToTable("Products");
+            //    });
 
             modelBuilder.Entity("BookWeb.Domain.Entities.Document", b =>
                 {

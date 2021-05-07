@@ -8,6 +8,7 @@ namespace BookWeb.Server.Controllers.Identity
 {
     [Route("api/identity/token")]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class TokenController : ControllerBase
     {
         private readonly ITokenService _identityService;

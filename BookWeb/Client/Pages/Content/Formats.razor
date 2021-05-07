@@ -1,0 +1,10 @@
+﻿@page "/formats/{selectedRecordLetter?}"
+
+<CalibreRecordViewer Icon=@Icons.Material.Outlined.Description Title="Formats" BaseUrl="formats" DetailsUrl="formatdetails" CalibreRecordType=@CalibreRecordType.Format selectedRecordLetter=@selectedRecordLetter></CalibreRecordViewer>
+
+@code {
+
+    [Parameter]
+    public string selectedRecordLetter { get; set; }
+}
+

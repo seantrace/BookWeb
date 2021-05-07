@@ -1,0 +1,38 @@
+From Amazon.co.uk
+
+For Author Info
+
+First Do Search
+
+e.g https://www.amazon.co.uk/s?k=james+patterson
+
+Find link to author page
+find a tag with inner text of author name
+
+<a class="a-size-base a-link-normal" href="/James-Patterson/e/B000APZGGS?ref=sr_ntt_srch_lnk_1&amp;qid=1619963471&amp;sr=8-1">James Patterson</a>
+
+Use href attribute value
+
+Fetch author page (as mobile)
+
+Author Image
+<div class="a-column a-span4 authorPageContentLeft">        
+    <img alt="" src="https://images-na.ssl-images-amazon.com/images/S/amzn-author-media-prod/f83dinp2g2c6q52rf44bs32ich._SY300_.jpg" data-a-image-name="primaryAuthorImage" class="a-dynamic-image a-stretch-horizontal" data-a-dynamic-image="{}">
+</div>
+
+Author Bio
+<span id="author_biography">JAMES PATTERSON is one of the best-known and biggest-selling writers of all time. His books have sold in excess of 375 million copies worldwide. He is the author of some of the most popular series of the past two decades - the Alex Cross, Women's Murder Club, Detective Michael Bennett and Private novels - and he has written many other number one bestsellers including romance novels and stand-alone thrillers.<br><br>James is passionate about encouraging children to read. Inspired by his own son who was a reluctant reader, he also writes a range of books for young readers including the Middle School, I Funny, Treasure Hunters, Dog Diaries and Max Einstein series. James has donated millions in grants to independent bookshops and has been the most borrowed author of adult fiction in UK libraries for the past eleven years in a row. He lives in Florida with his wife and son.</span>
+
+HtmlAgility set User Agent for Mobile
+
+HtmlWeb web = new HtmlWeb();
+web.UserAgent = "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Mobile Safari/537.36";
+
+
+Desktop Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+
+
+
+Yahoo
+
+https://images.search.yahoo.com/search/images?p=Author+L.J.Ross&imgty=face

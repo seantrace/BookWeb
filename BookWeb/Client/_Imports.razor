@@ -20,12 +20,8 @@
 @using BookWeb.Client.Infrastructure.Managers.Identity.Users
 @using BookWeb.Client.Infrastructure.Managers.Preferences
 @using BookWeb.Client.Infrastructure.Managers.Interceptors
-@using BookWeb.Client.Infrastructure.Managers.Catalog.Product
-@using BookWeb.Client.Infrastructure.Managers.Catalog.Brand
-@using BookWeb.Client.Infrastructure.Managers.Dashboard
 @using BookWeb.Client.Infrastructure.Managers.Communication
 @using BookWeb.Client.Infrastructure.Managers.Audit
-@using BookWeb.Client.Infrastructure.Managers.Document
 
 @*Shared Libraries*@
 @using BookWeb.Shared.Constants.Permission
@@ -44,6 +40,8 @@
 @using BookWeb.Client.Infrastructure.Authentication
 @using BookWeb.Client.Extensions
 
+@using Blazored.TextEditor
+
 @attribute [Authorize]
 @inject IAuthenticationManager _authenticationManager
 @inject IAccountManager _accountManager
@@ -57,11 +55,7 @@
 @inject PreferenceManager _preferenceManager
 @inject IRoleManager _roleManager
 @inject IUserManager _userManager
-@inject IProductManager _productManager
-@inject IBrandManager _brandManager
-@inject IDashboardManager _dashboardManager
 @inject IChatManager _chatManager
 @inject IAuditManager _auditManager
 @inject ILocalStorageService _localStorage;
 @inject IJSRuntime _jsRuntime;
-@inject IDocumentManager _documentManager;

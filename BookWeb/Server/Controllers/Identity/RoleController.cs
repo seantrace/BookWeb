@@ -9,6 +9,7 @@ namespace BookWeb.Server.Controllers
 {
     [Route("api/identity/role")]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class RoleController : ControllerBase
     {
         private readonly IRoleService _roleService;

@@ -1,0 +1,49 @@
+﻿@using BookWeb.Shared.Models
+
+<MudItem>
+    <div class="bookcover-container">
+        <div class="bookcover">
+            <div class="bookcover-overlay">
+                <div style="position: absolute;top: 0;width: 100%;text-align:center;">
+                    <MudRating ReadOnly="true" SelectedValue=@((int)BookItem.Rating) />
+                </div>
+                <div style="position: absolute;bottom: 0;width: 100%;text-align:center;">
+                    <MudTooltip Placement="Placement.Top" Text="Marked read on 12/1/2021">
+                        <MudIcon Icon="@Icons.Material.Outlined.Visibility" Color="Color.Error" />
+                    </MudTooltip>
+                    <MudTooltip Placement="Placement.Top" Text="Downloaded on 12/5/2020">
+                        <MudIcon Icon="@Icons.Material.Outlined.CloudDownload" Color="Color.Error" />
+                    </MudTooltip>
+                </div>
+            </div>
+            <Sprite NoSprite=false PageSize=50 SpriteNumber=@BookItem.Id Style="width: 150px; height: 230px" />
+            <div class="bookcover-details  fadeIn-right">
+                @{string bookdetailurl = $"/bookdetails/{BookItem.Id}";}
+                <a href="@bookdetailurl">
+                    <h5 class="bookcover-title">@BookItem.Title</h5>
+                    @if (BookItem.SeriesId > 0)
+                {
+                    <p class="bookcover-text">@BookItem.Series @BookItem.SeriesIndex.ToString()</p>
+                }
+                    <em><p class="bookcover-text">@BookItem.Author</p></em>
+                </a>
+            </div>
+        </div>
+    </div>
+</MudItem>
+
+
+
+    @code {
+    [Parameter]
+    public BookWeb.Book BookItem { get; set; }
+
+
+    [Inject]
+    public NavigationManager NavigationManager { get; set; }
+
+    private void OpenBookDetail(MouseEventArgs e, long id)
+    {
+        NavigationManager.NavigateTo($"/bookdetails/{id}");
+    }
+    }

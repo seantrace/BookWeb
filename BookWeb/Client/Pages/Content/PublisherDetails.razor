@@ -1,0 +1,8 @@
+﻿@page  "/publisherdetails/{Id}"
+
+<CalibreRecordDetails Id=@Id CalibreRecordType=@CalibreRecordType.Publisher></CalibreRecordDetails>
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+}

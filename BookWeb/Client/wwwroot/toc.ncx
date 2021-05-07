@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="en">
+<head>
+<meta name="dtb:uid" content="9781509858644"/>
+<meta name="dtb:depth" content="1"/>
+<meta name="dtb:totalPageCount" content="288"/>
+<meta name="dtb:maxPageNumber" content="288"/>
+</head>
+<docTitle><text>This is Going to Hurt</text></docTitle>
+<docAuthor><text>Adam Kay</text></docAuthor>
+<navMap>
+<navPoint id="navpoint-1" playOrder="1"><navLabel><text>Cover</text></navLabel><content src="xhtml/01_cover.xhtml#cov"/></navPoint>
+<navPoint id="navpoint-2" playOrder="2"><navLabel><text>Title page</text></navLabel><content src="xhtml/02_title.xhtml#tit"/></navPoint>
+<navPoint id="navpoint-3" playOrder="3"><navLabel><text>Dedication page</text></navLabel><content src="xhtml/03_dedication.xhtml#dedi"/></navPoint>
+<navPoint id="navpoint-4" playOrder="4"><navLabel><text>A NOTE REGARDING FOOTNOTES</text></navLabel><content src="xhtml/03a_note.xhtml#note"/></navPoint>
+<navPoint id="navpoint-5" playOrder="5"><navLabel><text>Epigraph page</text></navLabel><content src="xhtml/04_epigraph.xhtml#epi"/></navPoint>
+<navPoint id="navpoint-6" playOrder="6"><navLabel><text>Contents</text></navLabel><content src="xhtml/05_contents.xhtml#cont"/></navPoint>
+<navPoint id="navpoint-7" playOrder="7"><navLabel><text>Introduction</text></navLabel><content src="xhtml/06_introduction.xhtml#intro"/></navPoint>
+<navPoint id="navpoint-8" playOrder="8"><navLabel><text>1. House Officer</text></navLabel><content src="xhtml/07_chapter1.xhtml#ch1"/></navPoint>
+<navPoint id="navpoint-9" playOrder="9"><navLabel><text>2. Senior House Officer &#x2013; Post One</text></navLabel><content src="xhtml/09_chapter2.xhtml#ch2"/></navPoint>
+<navPoint id="navpoint-10" playOrder="10"><navLabel><text>3. Senior House Officer &#x2013; Post Two</text></navLabel><content src="xhtml/11_chapter3.xhtml#ch3"/></navPoint>
+<navPoint id="navpoint-11" playOrder="11"><navLabel><text>4. Senior House Officer &#x2013; Post Three</text></navLabel><content src="xhtml/13_chapter4.xhtml#ch4"/></navPoint>
+<navPoint id="navpoint-12" playOrder="12"><navLabel><text>5. Registrar &#x2013; Post One</text></navLabel><content src="xhtml/15_chapter5.xhtml#ch5"/></navPoint>
+<navPoint id="navpoint-13" playOrder="13"><navLabel><text>6. Registrar &#x2013; Post Two</text></navLabel><content src="xhtml/17_chapter6.xhtml#ch6"/></navPoint>
+<navPoint id="navpoint-14" playOrder="14"><navLabel><text>7. Registrar &#x2013; Post Three</text></navLabel><content src="xhtml/19_chapter7.xhtml#ch7"/></navPoint>
+<navPoint id="navpoint-15" playOrder="15"><navLabel><text>8. Registrar &#x2013; Post Four</text></navLabel><content src="xhtml/21_chapter8.xhtml#ch8"/></navPoint>
+<navPoint id="navpoint-16" playOrder="16"><navLabel><text>9. Senior Registrar</text></navLabel><content src="xhtml/23_chapter9.xhtml#ch9"/></navPoint>
+<navPoint id="navpoint-17" playOrder="17"><navLabel><text>10. Aftermath</text></navLabel><content src="xhtml/25_chapter10.xhtml#ch10"/></navPoint>
+<navPoint id="navpoint-18" playOrder="18"><navLabel><text>An Open Letter to the Secretary of State for Health</text></navLabel><content src="xhtml/27_anopen.xhtml#anopen"/></navPoint>
+<navPoint id="navpoint-19" playOrder="19"><navLabel><text>Acknowledgements</text></navLabel><content src="xhtml/28_acknowledgements.xhtml#ack"/></navPoint>
+<navPoint id="navpoint-20" playOrder="20"><navLabel><text>Praise</text></navLabel><content src="xhtml/29_praise.xhtml#praise"/></navPoint>
+<navPoint id="navpoint-21" playOrder="21"><navLabel><text>About the Author</text></navLabel><content src="xhtml/30_abouttheauthor.xhtml#about"/></navPoint>
+<navPoint id="navpoint-22" playOrder="22"><navLabel><text>Copyright page</text></navLabel><content src="xhtml/31_copyright.xhtml#copy"/></navPoint>
+</navMap>
+</ncx>

@@ -1,0 +1,133 @@
+Multiple library support
+
+
+public class Library {
+
+
+}
+
+
+Library Table
+
+long Id
+string Name
+string Path
+long BookCount
+
+
+Shelf
+
+long Id
+string Name
+bool IsPublic
+long UserId
+DateTime Created
+DateTime Modified
+
+BookSelfLink
+
+long Id
+long BookId
+long Order
+long ShelfId
+DateTime DateAdded
+
+BookReadLink
+
+Long Id
+Long BookId
+Long UserId
+bool ReadStatus
+DateTime Modified
+
+BookDownloadLink
+
+Long Id
+Long BookId
+Long UserId
+DateTime Modified
+
+
+ArchivedBooks
+
+long Id
+Long UserId
+Long BookId
+bool IsArchived
+DateTime Modified
+
+
+            //// Open database (create new if file doesn't exist)
+            //var store = new DataStore("data.json");
+            //var libraryCollection = store.GetCollection<Library>();
+            //var shelfCollection = store.GetCollection<Shelf>();
+
+            //Library lib = new Library();
+            //lib.Name = "Fiction";
+            //lib.Path = @"F:\EBooks\Libraries\Fiction";
+            //lib.UserAccess = new List<long>();
+            //lib.UserAccess.Add(1);
+            //libraryCollection.InsertOne(lib);
+
+            //Shelf s;
+
+            //s = new Shelf()
+            //{
+            //    Name = "Read",
+            //    LibraryId = 0,
+            //    IsPublic = false,
+            //    OwnerUserId = 1,
+            //    Type = ShelfType.Read,
+            //    Created = DateTime.Now,
+            //    BookIds = new List<long>(),
+            //    Modified = DateTime.Now
+            //};
+            //shelfCollection.InsertOne(s);
+
+            //s = new Shelf()
+            //{
+            //    Name = "Download",
+            //    LibraryId = 0,
+            //    IsPublic = false,
+            //    OwnerUserId = 1,
+            //    Type = ShelfType.Download,
+            //    Created = DateTime.Now,
+            //    BookIds = new List<long>(),
+            //    Modified = DateTime.Now
+            //};
+            //shelfCollection.InsertOne(s);
+
+            //s = new Shelf()
+            //{
+            //    Name = "Archive",
+            //    LibraryId = 0,
+            //    IsPublic = false,
+            //    OwnerUserId = 1,
+            //    Type = ShelfType.Archive,
+            //    Created = DateTime.Now,
+            //    BookIds = new List<long>(),
+            //    Modified = DateTime.Now
+            //};
+            //shelfCollection.InsertOne(s);
+
+
+            //s = new Shelf()
+            //{
+            //    Name = "Crime",
+            //    IsPublic = false,
+            //    LibraryId = 1,
+            //    OwnerUserId = 1,
+            //    Type = ShelfType.User,
+            //    Created = DateTime.Now,
+            //    BookIds = new List<long>(),
+            //    Modified = DateTime.Now
+            //};
+
+            //shelfCollection.InsertOne(s);
+
+            //var sh = shelfCollection.AsQueryable()
+            //            .First(s => s.Id == 7);
+
+            //// Add book 345 to shelf 7
+            //sh.BookIds.Add(399);
+            //shelfCollection.UpdateOne(sh.Id,sh);

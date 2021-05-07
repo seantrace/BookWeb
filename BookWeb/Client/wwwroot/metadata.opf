@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">535</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">462de9ca-f80f-40fa-bab9-96dea45501e2</dc:identifier>
+        <dc:title>This is Going to Hurt</dc:title>
+        <dc:creator opf:file-as="Kay, Adam" opf:role="aut">Adam Kay</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (3.39.1) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;As soon as Adam Kay set foot on a hospital ward for the first time, he realized there's quite a lot they don't teach you at medical school . . .&lt;/p&gt;&lt;p&gt;His diaries from the NHS front line - scribbled in secret after long nights, endless days and missed weekends -&lt;br&gt;are hilarious, horrifying and heartbreaking by turns. &lt;i&gt;This Is Going to Hurt&lt;/i&gt; is everything you wanted to know about being a junior doctor, and more than a few things you really didn't.&lt;/p&gt;&lt;p&gt;And yes, it may leave a scar.&lt;/p&gt;</dc:description>
+        <dc:publisher>Pan Macmillan UK</dc:publisher>
+        <dc:language>eng</dc:language>
+        <meta content="{&quot;Adam Kay&quot;: &quot;&quot;}" name="calibre:author_link_map"/>
+        <meta content="2019-08-06T12:13:27.153000+00:00" name="calibre:timestamp"/>
+        <meta content="This is Going to Hurt" name="calibre:title_sort"/>
+    </metadata>
+    <guide>
+        <reference href="cover.jpg" title="Cover" type="cover"/>
+    </guide>
+</package>

@@ -4,7 +4,10 @@ using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.JSInterop;
 using MudBlazor;
 using System;
+using System.Collections.Generic;
 using System.Net.Http.Headers;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace BookWeb.Client.Shared
@@ -16,6 +19,7 @@ namespace BookWeb.Client.Shared
         private string SecondName { get; set; }
         private string Email { get; set; }
         private char FirstLetterOfName { get; set; }
+        private string GravatarURL { get; set; }
 
         private async Task LoadDataAsync()
         {
@@ -30,6 +34,12 @@ namespace BookWeb.Client.Shared
                 {
                     FirstLetterOfName = FirstName[0];
                 }
+                Email = user.GetEmail();
+
+                // Convert hash byte array to string
+                var emailHash = Email.ToLower().ToMD5();
+                GravatarURL = $"https://www.gravatar.com/avatar/{emailHash}";
+
             }
         }
 
@@ -121,6 +131,16 @@ namespace BookWeb.Client.Shared
             //_ = hubConnection.DisposeAsync();
         }
 
+
+        private Task<IEnumerable<string>> Search(string text)
+        {
+            return new Task<IEnumerable<string>>(null);
+        }
+
+        private void OnSearchResult(string entry)
+        {
+            
+        }
         private HubConnection hubConnection;
         public bool IsConnected => hubConnection.State == HubConnectionState.Connected;
     }

@@ -1,0 +1,37 @@
+﻿@page "/library/{Id}"
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Home> _localizer
+@using Sve.Blazor.InfiniteScroll.Components
+
+<h1>Library Id is @Id</h1>
+
+@if (response != null)
+{
+    @*Console.WriteLine("Prefetch -----------------------------------------------------------------------------------");
+    @for (long i = preFetchStart; i < preFetchStart+40; i++)
+    {
+        Console.WriteLine($"Prefetching {i}");
+        string thumburl = $"https://localhost:5001/api/Books/{i}/Thumbnail";
+        <link rel="preload" as="image" href=@thumburl>
+    }*@
+    <MudScrollToTop>
+        <MudFab Color="Color.Tertiary" Icon="@Icons.Filled.ArrowCircleUp" />
+    </MudScrollToTop>
+    <InfiniteScroll ObserverTargetId="observerTarget" ObservableTargetReached="(e) => FetchMoreBooks()">
+        <MudGrid>
+            <MudItem xs="12">
+                <MudGrid Spacing="2" Justify="Justify.Center">
+                    @foreach (var book in books)
+                    {
+                        <BookCover BookItem=@book></BookCover>
+                    }
+                    <div id="observerTarget"></div>
+                </MudGrid>
+            </MudItem>
+        </MudGrid>
+    </InfiniteScroll>
+}
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+}
